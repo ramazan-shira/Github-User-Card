@@ -1,0 +1,65 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+.profiles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.user-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-form input {
+  padding: 5px 10px;
+  font-size: 22px;
+  border-radius: 5px;
+}
+
+.user-form button {
+  font-size: 22px;
+  color: white;
+  background-color: #ef233c;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+.profile-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid lightgray;
+  box-sizing: border-box;
+  padding: 20px;
+  width: max-content;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.profile-info h2 {
+  margin: 0;
+}
+
+.profile-info p {
+  margin: 0;
+  font-size: 18px;
+}
