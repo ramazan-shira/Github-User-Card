@@ -6,28 +6,28 @@ body {
   padding: 50px;
 }
 
-.profiles {
+.github-profile {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 50px;
 }
 
-.user-form {
+.search-user {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
 }
 
-.user-form input {
+.search-user input {
   padding: 5px 10px;
   font-size: 22px;
   border-radius: 5px;
 }
 
-.user-form button {
+.search-user button {
   font-size: 22px;
   color: white;
   background-color: #ef233c;
@@ -36,7 +36,7 @@ body {
   border-radius: 10px;
 }
 
-.profile-card {
+.profile {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,6 +47,11 @@ body {
   width: max-content;
 }
 
+.profile-img img {
+  width: 150px;
+  height: 150px;
+}
+
 .profile-info {
   display: flex;
   flex-direction: column;
@@ -55,11 +60,98 @@ body {
   gap: 10px;
 }
 
-.profile-info h2 {
+.profile-info h1 {
   margin: 0;
 }
 
 .profile-info p {
   margin: 0;
-  font-size: 18px;
+  font-size: 20px;
+}
+
+.followers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.followers-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid lightgray;
+  box-sizing: border-box;
+  padding: 20px;
+  width: max-content;
+}
+
+.followers-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.followers-info a {
+  text-decoration: none;
+  color: black;
+}
+
+.followers-info h1 {
+  margin: 0;
+}
+
+.followers-info p {
+  margin: 0;
+  font-size: 20px;
+}
+
+.repos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.repo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid lightgray;
+  box-sizing: border-box;
+  padding: 20px;
+  width: max-content;
+}
+
+.repo-img img {
+  width: 150px;
+  height: 150px;
+}
+
+.repo-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.repo-info a {
+  text-decoration: none;
+  color: black;
+}
+
+.repo-info h3 {
+  margin: 0;
+}
+
+.repo-info p {
+  margin: 0;
+  font-size: 20px;
 }
