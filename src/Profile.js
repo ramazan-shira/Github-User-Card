@@ -7,7 +7,7 @@ class Profiles extends React.Component {
     super(props);
     this.state = {
       input: "",
-      username: "",
+      username: "ramazan-shira",
       user: "",
     };
     this.handleInput = this.handleInput.bind(this);
@@ -30,11 +30,7 @@ class Profiles extends React.Component {
   };
 
   componentDidMount() {
-    if (this.state.username === "") {
-      <h1>No data</h1>;
-    } else {
-      this.fetchData();
-    }
+    this.fetchData();
   }
 
   componentDidUpdate(prevProps, prevState) {
