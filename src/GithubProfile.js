@@ -8,6 +8,8 @@ class GithubProfile extends React.Component {
       input: "",
       username: "ramazan-shira",
       user: "",
+      repos: [],
+      followers: [],
       loading: false,
       error: false,
       showFollowers: false,
@@ -65,6 +67,19 @@ class GithubProfile extends React.Component {
     }
   }
 
+  fetchRepos = async () => {
+    this.setState({ loading: true });
+    const repos = await axios.get(
+      `https://api.github.com/users/${this.state.username}/repos`
+    );
+    this.setState({
+      repos: repos.data,
+      loading: false,
+      showFollowers: false,
+      showRepos: true,
+    });
+  };
+
   render() {
     return (
       <div className="github-profile">
@@ -85,11 +100,25 @@ class GithubProfile extends React.Component {
               <img src={this.state.user.avatar_url} alt="profile" />
             </div>
             <h1>{this.state.user.name}</h1>
-            <p>Repos: {this.state.user.public_repos}</p>
+            <p onClick={this.fetchRepos}>
+              Repos: {this.state.user.public_repos}
+            </p>
             <p>Followers: {this.state.user.followers}</p>
             <p>Following: {this.state.user.following}</p>
           </div>
         )}
+
+        <div className="repos">
+          {this.state.repos.map((repo) => (
+            <div className="repo" key={repo.id}>
+              <h3>{repo.name}</h3>
+              <p>Language: {repo.language}</p>
+              <p>
+                Repo on Github: <a href={repo.html_url}>{repo.html_url}</a>
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
