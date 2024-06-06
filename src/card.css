@@ -25,6 +25,7 @@ body {
   padding: 5px 10px;
   font-size: 22px;
   border-radius: 5px;
+  width: 300px;
 }
 
 .search-user button {
