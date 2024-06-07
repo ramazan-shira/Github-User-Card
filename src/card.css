@@ -159,6 +159,15 @@ body {
   width: 800px;
 }
 
+.follower-profile-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 22px;
+}
+
 .followers-info {
   display: flex;
   flex-direction: column;
@@ -167,21 +176,20 @@ body {
   gap: 10px;
 }
 
-.followers-info a {
+.follower-profile-info a {
   text-decoration: none;
   color: black;
 }
 
-.followers-info h1 {
+.follower-profile-info h1 {
   margin: 0;
 }
 
-.followers-info p {
+.follower-profile-info p {
   margin: 0;
-  font-size: 20px;
 }
 
-.profile-info p a {
+.follower-profile-info p a {
   text-decoration: none;
   color: black;
 }
@@ -254,11 +262,19 @@ body {
   }
 
   .repo {
-    width: 300px;
+    width: 330px;
   }
 
   .followers-profile {
-    width: 300px;
+    width: 330px;
+  }
+
+  .follower-profile-info h1 {
+    font-size: 36px;
+  }
+
+  .follower-profile-info p {
+    font-size: 18px;
   }
 }
 
