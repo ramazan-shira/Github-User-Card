@@ -150,6 +150,7 @@ class GithubProfile extends React.Component {
                   <span className="info-title">Github contribution graph:</span>
                 </p>
                 <GitHubCalendar
+                  className="github-graph"
                   username={this.state.username}
                   colorScheme="light"
                 />
