@@ -184,7 +184,9 @@ class GithubProfile extends React.Component {
                   <img src={follower.avatar_url} alt="profile" />
                 </div>
                 <div className="follower-profile-info">
-                  <h1>{follower.login}</h1>
+                  <h1 onClick={() => this.handleUser(follower.login)}>
+                    {follower.login}
+                  </h1>
 
                   <p onClick={() => this.handleUser(follower.login)}>
                     <span className="info-title click">View Profile</span>

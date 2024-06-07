@@ -4,6 +4,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 50px;
+  overflow-x: hidden;
 }
 
 .github-profile {
@@ -47,7 +48,14 @@ body {
   border-radius: 10px;
   box-sizing: border-box;
   padding: 30px;
-  width: max-content;
+  box-sizing: border-box;
+  width: 100%;
+  text-overflow: clip;
+  text-wrap: wrap;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow: hidden;
+  overflow-wrap: break-word;
 }
 
 .user-profile {
@@ -55,7 +63,14 @@ body {
   justify-content: center;
   align-items: center;
   gap: 30px;
+  box-sizing: border-box;
   width: 100%;
+  text-overflow: clip;
+  text-wrap: wrap;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow: hidden;
+  overflow-wrap: break-word;
 }
 
 .profile-img img {
@@ -70,11 +85,23 @@ body {
   align-items: flex-start;
   gap: 10px;
   font-size: 22px;
+  width: 100%;
+  box-sizing: border-box;
+  width: 100%;
+  text-overflow: clip;
+  text-wrap: wrap;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow: hidden;
+  overflow-wrap: break-word;
 }
 
 .profile-info h1 {
   margin: 0;
   color: #003049;
+  box-sizing: border-box;
+  width: 100%;
+  white-space: pre-wrap;
 }
 
 .profile-info p {
@@ -119,18 +146,31 @@ body {
   border: 1px solid #495057;
   border-radius: 10px;
   gap: 10px;
-  box-sizing: border-box;
   padding: 20px;
   width: 800px;
+  box-sizing: border-box;
+  width: 100%;
+  text-overflow: clip;
+  text-wrap: wrap;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 .repo h3 {
   margin: 0;
   color: #415a77;
+  width: 100%;
+  text-overflow: clip;
+  box-sizing: border-box;
+  white-space: pre-wrap;
 }
 
 .repo p {
   margin: 0;
+  width: 100%;
+  text-overflow: clip;
+  box-sizing: border-box;
+  white-space: pre-wrap;
 }
 
 .repo p a {
@@ -166,14 +206,12 @@ body {
   align-items: flex-start;
   gap: 10px;
   font-size: 22px;
-}
-
-.followers-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  text-overflow: clip;
+  text-wrap: wrap;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 .follower-profile-info a {
@@ -183,15 +221,22 @@ body {
 
 .follower-profile-info h1 {
   margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+  white-space: pre-wrap;
+  cursor: pointer;
 }
 
 .follower-profile-info p {
   margin: 0;
+  text-wrap: wrap;
+  width: 100%;
 }
 
 .follower-profile-info p a {
   text-decoration: none;
   color: black;
+  text-wrap: wrap;
 }
 
 .error {
