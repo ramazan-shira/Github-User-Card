@@ -1,5 +1,7 @@
 import axios from "axios";
 import React from "react";
+import GitHubCalendar from "react-github-calendar";
+import "./card.css";
 
 class GithubProfile extends React.Component {
   constructor(props) {
@@ -80,6 +82,31 @@ class GithubProfile extends React.Component {
     });
   };
 
+  fetchFollowers = async () => {
+    this.setState({ loading: true });
+    const resp = await axios.get(
+      `https://api.github.com/users/${this.state.username}/followers`
+    );
+    if (resp.data) {
+      this.setState({
+        followers: resp.data,
+        showFollowers: true,
+        showRepos: false,
+        loading: false,
+      });
+    }
+  };
+
+  handleUser(login) {
+    this.setState({
+      username: login,
+      input: login,
+      showFollowers: false,
+      showRepos: false,
+      loading: true,
+    });
+  }
+
   render() {
     return (
       <div className="github-profile">
@@ -92,33 +119,84 @@ class GithubProfile extends React.Component {
           />
           <button onClick={this.setUsername}>Search</button>
         </div>
-        {this.state.loading && <h1>Loading...</h1>}
-        {this.state.error && <h1>"No user found!!"</h1>}
+
+        {this.state.error && <h1 className="error">No user found!!!</h1>}
         {!this.state.loading && !this.state.error && (
           <div className="profile">
-            <div className="profile-img">
-              <img src={this.state.user.avatar_url} alt="profile" />
+            <div className="user-profile">
+              <div className="profile-img">
+                <img src={this.state.user.avatar_url} alt="profile" />
+              </div>
+              <div className="profile-info">
+                <h1>{this.state.user.name}</h1>
+                <p onClick={this.state.repos && this.fetchRepos}>
+                  <span className="info-title click">Repos:</span>{" "}
+                  {this.state.user.public_repos}
+                </p>
+                <p onClick={this.state.followers && this.fetchFollowers}>
+                  <span className="info-title click">Followers:</span>{" "}
+                  {this.state.user.followers}
+                </p>
+                <p>
+                  <span className="info-title">Following:</span>{" "}
+                  {this.state.user.following}
+                </p>
+              </div>
             </div>
-            <h1>{this.state.user.name}</h1>
-            <p onClick={this.fetchRepos}>
-              Repos: {this.state.user.public_repos}
-            </p>
-            <p>Followers: {this.state.user.followers}</p>
-            <p>Following: {this.state.user.following}</p>
+            {this.state.loading && <h1>Loading...</h1>}
+            {!this.state.loading && (
+              <div className="graph">
+                <p>
+                  <span className="info-title">Github contribution graph:</span>
+                </p>
+                <GitHubCalendar
+                  username={this.state.username}
+                  colorScheme="light"
+                />
+              </div>
+            )}
+          </div>
+        )}
+        {this.state.loading && <h1>Loading...</h1>}
+        {!this.state.loading && this.state.showRepos && (
+          <div className="repos">
+            {this.state.repos.map((repo) => (
+              <div className="repo" key={repo.id}>
+                <h3>{repo.name}</h3>
+                <p>
+                  <span className="info-title">Language:</span> {repo.language}
+                </p>
+                <p>
+                  <span className="info-title">Repo on Github:</span>{" "}
+                  <a href={repo.html_url}>{repo.html_url}</a>
+                </p>
+              </div>
+            ))}
           </div>
         )}
 
-        <div className="repos">
-          {this.state.repos.map((repo) => (
-            <div className="repo" key={repo.id}>
-              <h3>{repo.name}</h3>
-              <p>Language: {repo.language}</p>
-              <p>
-                Repo on Github: <a href={repo.html_url}>{repo.html_url}</a>
-              </p>
-            </div>
-          ))}
-        </div>
+        {!this.state.loading && this.state.showFollowers && (
+          <div className="followers">
+            {this.state.followers.map((follower) => (
+              <div className="followers-profile" key={follower.id}>
+                <div className="profile-img">
+                  <img src={follower.avatar_url} alt="profile" />
+                </div>
+                <div className="profile-info">
+                  <h1>{follower.login}</h1>
+
+                  <p onClick={() => this.handleUser(follower.login)}>
+                    <span className="info-title click">View Profile</span>
+                  </p>
+                  <p>
+                    <span className="info-title">Github Link:</span>{" "}
+                    <a href={follower.html_url}>{follower.html_url}</a>
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     );
   }

@@ -39,13 +39,23 @@ body {
 
 .profile {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px;
   border: 1px solid lightgray;
+  border-radius: 10px;
   box-sizing: border-box;
-  padding: 20px;
+  padding: 30px;
   width: max-content;
+}
+
+.user-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
 }
 
 .profile-img img {
@@ -59,15 +69,73 @@ body {
   justify-content: center;
   align-items: flex-start;
   gap: 10px;
+  font-size: 22px;
 }
 
 .profile-info h1 {
   margin: 0;
+  color: #003049;
 }
 
 .profile-info p {
   margin: 0;
-  font-size: 20px;
+}
+
+.info-title {
+  font-weight: 600;
+}
+
+.info-title.click {
+  cursor: pointer;
+}
+
+.graph {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.graph p {
+  margin: 0;
+  font-size: 22px;
+}
+
+.repos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  font-size: 22px;
+}
+
+.repo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border: 1px solid #495057;
+  border-radius: 10px;
+  gap: 10px;
+  box-sizing: border-box;
+  padding: 20px;
+  width: 800px;
+}
+
+.repo h3 {
+  margin: 0;
+  color: #415a77;
+}
+
+.repo p {
+  margin: 0;
+}
+
+.repo p a {
+  text-decoration: none;
+  color: black;
 }
 
 .followers {
@@ -75,18 +143,20 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
 }
 
 .followers-profile {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 20px;
-  border: 1px solid lightgray;
+  border: 1px solid #003566;
+  border-radius: 10px;
   box-sizing: border-box;
   padding: 20px;
   width: max-content;
+  width: 800px;
 }
 
 .followers-info {
@@ -111,48 +181,12 @@ body {
   font-size: 20px;
 }
 
-.repos {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-}
-
-.repo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  border: 1px solid lightgray;
-  box-sizing: border-box;
-  padding: 20px;
-  width: max-content;
-}
-
-.repo-img img {
-  width: 150px;
-  height: 150px;
-}
-
-.repo-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 20px;
-}
-
-.repo-info a {
+.profile-info p a {
   text-decoration: none;
   color: black;
 }
 
-.repo-info h3 {
-  margin: 0;
-}
-
-.repo-info p {
-  margin: 0;
-  font-size: 20px;
+.error {
+  font-size: 42px;
+  color: red;
 }
