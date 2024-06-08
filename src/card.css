@@ -50,12 +50,6 @@ body {
   padding: 30px;
   box-sizing: border-box;
   width: 100%;
-  text-overflow: clip;
-  text-wrap: wrap;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  overflow: hidden;
-  overflow-wrap: break-word;
 }
 
 .user-profile {
@@ -65,12 +59,6 @@ body {
   gap: 30px;
   box-sizing: border-box;
   width: 100%;
-  text-overflow: clip;
-  text-wrap: wrap;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  overflow: hidden;
-  overflow-wrap: break-word;
 }
 
 .profile-img img {
@@ -88,20 +76,14 @@ body {
   width: 100%;
   box-sizing: border-box;
   width: 100%;
-  text-overflow: clip;
-  text-wrap: wrap;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  overflow: hidden;
-  overflow-wrap: break-word;
 }
 
 .profile-info h1 {
   margin: 0;
   color: #003049;
-  box-sizing: border-box;
-  width: 100%;
-  white-space: pre-wrap;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .profile-info p {
@@ -110,6 +92,9 @@ body {
 
 .info-title {
   font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .info-title.click {
@@ -150,27 +135,21 @@ body {
   width: 800px;
   box-sizing: border-box;
   width: 100%;
-  text-overflow: clip;
-  text-wrap: wrap;
-  white-space: pre-wrap;
-  word-wrap: break-word;
 }
 
 .repo h3 {
   margin: 0;
   color: #415a77;
-  width: 100%;
-  text-overflow: clip;
-  box-sizing: border-box;
-  white-space: pre-wrap;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .repo p {
   margin: 0;
-  width: 100%;
-  text-overflow: clip;
-  box-sizing: border-box;
-  white-space: pre-wrap;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .repo p a {
@@ -221,22 +200,25 @@ body {
 
 .follower-profile-info h1 {
   margin: 0;
-  width: 100%;
-  box-sizing: border-box;
-  white-space: pre-wrap;
-  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .follower-profile-info p {
   margin: 0;
-  text-wrap: wrap;
-  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .follower-profile-info p a {
   text-decoration: none;
   color: black;
-  text-wrap: wrap;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-grid;
 }
 
 .error {
@@ -244,9 +226,40 @@ body {
   color: red;
 }
 
+@media screen and (max-width: 1440px) {
+  .repo {
+    width: 1100px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .repo {
+    width: 1000px;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .repo {
+    width: 900px;
+  }
+}
+
 @media screen and (max-width: 992px) {
   .styles-module_calendar__sT1ND {
-    width: 700px;
+    width: 550px;
+  }
+
+  .repo {
+    width: 800px;
+  }
+
+  .repo h3,
+  .repo p {
+    width: 550px;
+  }
+
+  .repo p a {
+    width: 380px;
   }
 }
 
@@ -257,6 +270,20 @@ body {
 
   .followers-profile {
     width: 650px;
+  }
+
+  .repo h3,
+  .repo p {
+    width: 500px;
+  }
+
+  .follower-profile-info p,
+  .follower-profile-info h1 {
+    width: 400px;
+  }
+
+  .follower-profile-info p a {
+    width: 270px;
   }
 }
 
@@ -277,6 +304,54 @@ body {
     justify-content: center;
     align-items: center;
   }
+
+  .profile-info,
+  .profile-info h1 {
+    width: 430px;
+  }
+
+  .repo h3,
+  .repo p {
+    width: 430px;
+  }
+
+  .repo p a {
+    width: 260px;
+  }
+
+  .follower-profile-info p,
+  .follower-profile-info h1 {
+    width: 430px;
+  }
+
+  .follower-profile-info p a {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .profile-info,
+  .profile-info h1 {
+    width: 430px;
+  }
+
+  .repo h3,
+  .repo p {
+    width: 430px;
+  }
+
+  .repo p a {
+    width: 260px;
+  }
+
+  .follower-profile-info p,
+  .follower-profile-info h1 {
+    width: 430px;
+  }
+
+  .follower-profile-info p a {
+    width: 430px;
+  }
 }
 
 @media screen and (max-width: 620px) {
@@ -288,12 +363,60 @@ body {
     flex-direction: column;
   }
 
+  .profile-info,
+  .profile-info h1 {
+    width: 350px;
+  }
+
+  .repo h3,
+  .repo p {
+    width: 350px;
+  }
+
+  .repo p a {
+    width: 180px;
+  }
+
+  .follower-profile-info p a {
+    width: 180px;
+  }
+
+  .follower-profile-info p,
+  .follower-profile-info h1 {
+    width: 350px;
+  }
+
   .repo {
     width: 450px;
   }
 
   .followers-profile {
     width: 450px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .profile-info,
+  .profile-info h1 {
+    width: 300px;
+  }
+
+  .repo h3,
+  .repo p {
+    width: 300px;
+  }
+
+  .repo p a {
+    width: 140px;
+  }
+
+  .follower-profile-info p,
+  .follower-profile-info h1 {
+    width: 300px;
+  }
+
+  .follower-profile-info p a {
+    width: 170px;
   }
 }
 
